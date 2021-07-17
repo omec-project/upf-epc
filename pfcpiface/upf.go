@@ -9,6 +9,14 @@ import (
 	"time"
 )
 
+// QosConfigVal : Qos configured value
+type QosConfigVal struct {
+	cbs              uint32
+	pbs              uint32
+	ebs              uint32
+	schedulePriority uint32
+}
+
 type upf struct {
 	enableUeIPAlloc  bool
 	enableEndMarker  bool
@@ -29,6 +37,7 @@ type upf struct {
 	recoveryTime     time.Time
 	dnn              string
 	reportNotifyChan chan uint64
+	qciQosMap        map[uint8]*QosConfigVal
 }
 
 // to be replaced with go-pfcp structs
@@ -78,11 +87,25 @@ func (u *upf) sim(method string) {
 	u.intf.sim(u, method)
 }
 
+func (u *upf) readQciQosMap(conf *Conf) {
+	u.qciQosMap = make(map[uint8]*QosConfigVal)
+	for _, qosVal := range conf.QciQosConfig {
+		qosConfigVal := &QosConfigVal{
+			cbs:              qosVal.CBS,
+			ebs:              qosVal.EBS,
+			pbs:              qosVal.PBS,
+			schedulePriority: qosVal.SchedulingPriority,
+		}
+		u.qciQosMap[qosVal.QCI] = qosConfigVal
+	}
+}
+
 func (u *upf) setUpfInfo(conf *Conf) {
 	u.reportNotifyChan = make(chan uint64, 1024)
 	u.n4SrcIP = net.ParseIP("0.0.0.0")
 	u.nodeIP = net.ParseIP("0.0.0.0")
 
+	u.readQciQosMap(conf)
 	if conf.CPIface.SrcIP == "" {
 		if conf.CPIface.DestIP != "" {
 			log.Println("Dest address ", conf.CPIface.DestIP)

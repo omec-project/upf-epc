@@ -194,15 +194,15 @@ if ntf:
   _in -> ntf
   _in = ntf
 
-_in -> qerLookup::ExactMatch(fields=[{'attr_name':'qer_id', 'num_bytes':4}, \
-                                     {'attr_name':'fseid', 'num_bytes':8}], \
+_in -> qerLookup::Qos(fields=[ {'attr_name':'src_iface', 'num_bytes':1}, \
+                               {'attr_name':'qer_id', 'num_bytes':4}, \
+                               {'attr_name':'fseid', 'num_bytes':8}], \
                              values=[{'attr_name':'qfi', 'num_bytes':1}, \
-                                     {'attr_name':'ulStatus', 'num_bytes':1},\
-                                     {'attr_name':'dlStatus', 'num_bytes':1},\
-                                     {'attr_name':'ulMbr', 'num_bytes':4},\
-                                     {'attr_name':'dlMbr', 'num_bytes':4},\
-                                     {'attr_name':'ulGbr', 'num_bytes':4},\
-                                     {'attr_name':'dlGbr', 'num_bytes':4}])
+                                     {'attr_name':'cir', 'num_bytes':4},\
+                                     {'attr_name':'pir', 'num_bytes':4},\
+                                     {'attr_name':'cbs', 'num_bytes':4},\
+                                     {'attr_name':'pbs', 'num_bytes':4},\
+                                     {'attr_name':'ebs', 'num_bytes':4}])
 
 _in = qerLookup
 _in -> farLookup::ExactMatch(fields=[{'attr_name':'far_id', 'num_bytes':4}, \

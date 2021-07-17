@@ -32,7 +32,7 @@
     "hwcksum": false,
 
     "": "Enable PDU Session Container extension",
-    "gtppsc": false,
+    "gtppsc": true,
 
     "": "Enable Intel Dynamic Device Personalization (DDP)",
     "ddp": false,
@@ -69,7 +69,22 @@
     "" : "read_timeout: 25",
     "" : "notify_sockaddr: /tmp/notifycp",
     "" : "endmarker_sockaddr: /tmp/pfcpport",
-    
+    "qci_qos_config": [
+        {
+            "qci": 9,
+            "cbs": 2048,
+            "ebs": 2048,
+            "pbs": 2048,
+            "priority": 6
+        },
+        {
+            "qci": 8,
+            "cbs": 2048,
+            "ebs": 2048,
+            "pbs": 2048,
+            "priority": 5
+        }
+    ],
     "": "Control plane controller settings",
     "cpiface": {
         "enable_ue_ip_alloc": false,

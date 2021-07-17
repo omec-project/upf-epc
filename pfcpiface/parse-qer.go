@@ -12,8 +12,14 @@ import (
 type qer struct {
 	qerID    uint32
 	qfi      uint8
+	srcIface uint8
 	ulStatus uint8
 	dlStatus uint8
+	cir      uint64
+	pir      uint64
+	cbs      uint64
+	ebs      uint64
+	pbs      uint64
 	ulMbr    uint64
 	dlMbr    uint64
 	ulGbr    uint64
@@ -26,6 +32,7 @@ func (q *qer) printQER() {
 	log.Println("------------------ QER ---------------------")
 	log.Println("QER ID:", q.qerID)
 	log.Println("fseID:", q.fseID)
+	log.Println("Src Interface:", q.srcIface)
 	log.Println("QFI:", q.qfi)
 	log.Println("fseIDIP:", int2ip(q.fseidIP))
 	log.Println("Uplink Status:", q.ulStatus)
@@ -34,6 +41,11 @@ func (q *qer) printQER() {
 	log.Println("Downlink MBR:", q.dlMbr)
 	log.Println("Uplink GBR:", q.ulGbr)
 	log.Println("Downlink GBR:", q.dlGbr)
+	log.Println("Committed Information rate:", q.cir)
+	log.Println("Peak Information rate:", q.pir)
+	log.Println("Committed burst size:", q.cbs)
+	log.Println("Peak burst size:", q.pbs)
+	log.Println("Excess burst size:", q.pbs)
 	log.Println("--------------------------------------------")
 }
 func (q *qer) parseQER(ie1 *ie.IE, seid uint64, upf *upf) error {
@@ -87,6 +99,11 @@ func (q *qer) parseQER(ie1 *ie.IE, seid uint64, upf *upf) error {
 	q.dlMbr = uint64(mbrDL)
 	q.ulGbr = uint64(gbrUL)
 	q.dlGbr = uint64(gbrDL)
+	q.cir = q.dlGbr
+	q.pir = q.dlMbr
+	q.cbs = uint64(upf.qciQosMap[qfi].cbs)
+	q.pbs = uint64(upf.qciQosMap[qfi].pbs)
+	q.ebs = uint64(upf.qciQosMap[qfi].ebs)
 	q.fseID = (seid) // fseID currently being truncated to uint32 <--- FIXIT/TODO/XXX
 
 	return nil
