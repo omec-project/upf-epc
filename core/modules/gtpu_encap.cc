@@ -201,8 +201,7 @@ CommandResponse GtpuEncap::Init(const bess::pb::GtpuEncapArg &arg) {
   tout_uport = AddMetadataAttr("tunnel_out_udp_port", sizeof(uint16_t),
                                AccessMode::kRead);
   DLOG(INFO) << "tout_uport: " << tout_uport << std::endl;
-  qfi_attr =
-      AddMetadataAttr("qfi", sizeof(uint8_t), AccessMode::kRead);
+  qfi_attr = AddMetadataAttr("qfi", sizeof(uint8_t), AccessMode::kRead);
   DLOG(INFO) << "qfi_attr: " << qfi_attr << std::endl;
 
   return CommandSuccess();

@@ -17,3 +17,4 @@ jobs:
         with:
           version: v1.29
           working-directory: pfcpiface
+          args: --enable-all --exclude-use-default=false
