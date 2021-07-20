@@ -5895,6 +5895,262 @@ func (x *WorkerSplitArg) GetWorkerGates() map[uint32]uint32 {
 	return nil
 }
 
+type QosArg struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Fields []*Field `protobuf:"bytes,1,rep,name=fields,proto3" json:"fields,omitempty"`
+	Values []*Field `protobuf:"bytes,2,rep,name=values,proto3" json:"values,omitempty"`
+}
+
+func (x *QosArg) Reset() {
+	*x = QosArg{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_module_msg_proto_msgTypes[102]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *QosArg) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QosArg) ProtoMessage() {}
+
+func (x *QosArg) ProtoReflect() protoreflect.Message {
+	mi := &file_module_msg_proto_msgTypes[102]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use QosArg.ProtoReflect.Descriptor instead.
+func (*QosArg) Descriptor() ([]byte, []int) {
+	return file_module_msg_proto_rawDescGZIP(), []int{102}
+}
+
+func (x *QosArg) GetFields() []*Field {
+	if x != nil {
+		return x.Fields
+	}
+	return nil
+}
+
+func (x *QosArg) GetValues() []*Field {
+	if x != nil {
+		return x.Values
+	}
+	return nil
+}
+
+type QosCommandAddArg struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Gate   uint64       `protobuf:"varint,1,opt,name=gate,proto3" json:"gate,omitempty"`
+	Fields []*FieldData `protobuf:"bytes,2,rep,name=fields,proto3" json:"fields,omitempty"`
+	Values []*FieldData `protobuf:"bytes,3,rep,name=values,proto3" json:"values,omitempty"`
+}
+
+func (x *QosCommandAddArg) Reset() {
+	*x = QosCommandAddArg{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_module_msg_proto_msgTypes[103]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *QosCommandAddArg) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QosCommandAddArg) ProtoMessage() {}
+
+func (x *QosCommandAddArg) ProtoReflect() protoreflect.Message {
+	mi := &file_module_msg_proto_msgTypes[103]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use QosCommandAddArg.ProtoReflect.Descriptor instead.
+func (*QosCommandAddArg) Descriptor() ([]byte, []int) {
+	return file_module_msg_proto_rawDescGZIP(), []int{103}
+}
+
+func (x *QosCommandAddArg) GetGate() uint64 {
+	if x != nil {
+		return x.Gate
+	}
+	return 0
+}
+
+func (x *QosCommandAddArg) GetFields() []*FieldData {
+	if x != nil {
+		return x.Fields
+	}
+	return nil
+}
+
+func (x *QosCommandAddArg) GetValues() []*FieldData {
+	if x != nil {
+		return x.Values
+	}
+	return nil
+}
+
+type QosCommandDeleteArg struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Fields []*FieldData `protobuf:"bytes,2,rep,name=fields,proto3" json:"fields,omitempty"`
+}
+
+func (x *QosCommandDeleteArg) Reset() {
+	*x = QosCommandDeleteArg{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_module_msg_proto_msgTypes[104]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *QosCommandDeleteArg) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QosCommandDeleteArg) ProtoMessage() {}
+
+func (x *QosCommandDeleteArg) ProtoReflect() protoreflect.Message {
+	mi := &file_module_msg_proto_msgTypes[104]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use QosCommandDeleteArg.ProtoReflect.Descriptor instead.
+func (*QosCommandDeleteArg) Descriptor() ([]byte, []int) {
+	return file_module_msg_proto_rawDescGZIP(), []int{104}
+}
+
+func (x *QosCommandDeleteArg) GetFields() []*FieldData {
+	if x != nil {
+		return x.Fields
+	}
+	return nil
+}
+
+//*
+// The function `clear()` for WildcardMatch takes no parameters, it clears
+// all state in the WildcardMatch module (is equivalent to calling delete for all rules)
+type QosCommandClearArg struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *QosCommandClearArg) Reset() {
+	*x = QosCommandClearArg{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_module_msg_proto_msgTypes[105]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *QosCommandClearArg) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QosCommandClearArg) ProtoMessage() {}
+
+func (x *QosCommandClearArg) ProtoReflect() protoreflect.Message {
+	mi := &file_module_msg_proto_msgTypes[105]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use QosCommandClearArg.ProtoReflect.Descriptor instead.
+func (*QosCommandClearArg) Descriptor() ([]byte, []int) {
+	return file_module_msg_proto_rawDescGZIP(), []int{105}
+}
+
+//*
+// For traffic which does not match any rule in the WildcardMatch module,
+// the `set_default_gate(...)` function specifies which gate to send this extra traffic to.
+type QosCommandSetDefaultGateArg struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Gate uint64 `protobuf:"varint,1,opt,name=gate,proto3" json:"gate,omitempty"`
+}
+
+func (x *QosCommandSetDefaultGateArg) Reset() {
+	*x = QosCommandSetDefaultGateArg{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_module_msg_proto_msgTypes[106]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *QosCommandSetDefaultGateArg) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QosCommandSetDefaultGateArg) ProtoMessage() {}
+
+func (x *QosCommandSetDefaultGateArg) ProtoReflect() protoreflect.Message {
+	mi := &file_module_msg_proto_msgTypes[106]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use QosCommandSetDefaultGateArg.ProtoReflect.Descriptor instead.
+func (*QosCommandSetDefaultGateArg) Descriptor() ([]byte, []int) {
+	return file_module_msg_proto_rawDescGZIP(), []int{106}
+}
+
+func (x *QosCommandSetDefaultGateArg) GetGate() uint64 {
+	if x != nil {
+		return x.Gate
+	}
+	return 0
+}
+
 type L2ForwardCommandAddArg_Entry struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -5907,7 +6163,7 @@ type L2ForwardCommandAddArg_Entry struct {
 func (x *L2ForwardCommandAddArg_Entry) Reset() {
 	*x = L2ForwardCommandAddArg_Entry{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_module_msg_proto_msgTypes[102]
+		mi := &file_module_msg_proto_msgTypes[107]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5920,7 +6176,7 @@ func (x *L2ForwardCommandAddArg_Entry) String() string {
 func (*L2ForwardCommandAddArg_Entry) ProtoMessage() {}
 
 func (x *L2ForwardCommandAddArg_Entry) ProtoReflect() protoreflect.Message {
-	mi := &file_module_msg_proto_msgTypes[102]
+	mi := &file_module_msg_proto_msgTypes[107]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5968,7 +6224,7 @@ type MeasureCommandGetSummaryResponse_Histogram struct {
 func (x *MeasureCommandGetSummaryResponse_Histogram) Reset() {
 	*x = MeasureCommandGetSummaryResponse_Histogram{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_module_msg_proto_msgTypes[103]
+		mi := &file_module_msg_proto_msgTypes[108]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5981,7 +6237,7 @@ func (x *MeasureCommandGetSummaryResponse_Histogram) String() string {
 func (*MeasureCommandGetSummaryResponse_Histogram) ProtoMessage() {}
 
 func (x *MeasureCommandGetSummaryResponse_Histogram) ProtoReflect() protoreflect.Message {
-	mi := &file_module_msg_proto_msgTypes[103]
+	mi := &file_module_msg_proto_msgTypes[108]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6071,7 +6327,7 @@ type ACLArg_Rule struct {
 func (x *ACLArg_Rule) Reset() {
 	*x = ACLArg_Rule{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_module_msg_proto_msgTypes[104]
+		mi := &file_module_msg_proto_msgTypes[109]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6084,7 +6340,7 @@ func (x *ACLArg_Rule) String() string {
 func (*ACLArg_Rule) ProtoMessage() {}
 
 func (x *ACLArg_Rule) ProtoReflect() protoreflect.Message {
-	mi := &file_module_msg_proto_msgTypes[104]
+	mi := &file_module_msg_proto_msgTypes[109]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6157,7 +6413,7 @@ type BPFArg_Filter struct {
 func (x *BPFArg_Filter) Reset() {
 	*x = BPFArg_Filter{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_module_msg_proto_msgTypes[105]
+		mi := &file_module_msg_proto_msgTypes[110]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6170,7 +6426,7 @@ func (x *BPFArg_Filter) String() string {
 func (*BPFArg_Filter) ProtoMessage() {}
 
 func (x *BPFArg_Filter) ProtoReflect() protoreflect.Message {
-	mi := &file_module_msg_proto_msgTypes[105]
+	mi := &file_module_msg_proto_msgTypes[110]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6224,7 +6480,7 @@ type GenericEncapArg_EncapField struct {
 func (x *GenericEncapArg_EncapField) Reset() {
 	*x = GenericEncapArg_EncapField{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_module_msg_proto_msgTypes[106]
+		mi := &file_module_msg_proto_msgTypes[111]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6237,7 +6493,7 @@ func (x *GenericEncapArg_EncapField) String() string {
 func (*GenericEncapArg_EncapField) ProtoMessage() {}
 
 func (x *GenericEncapArg_EncapField) ProtoReflect() protoreflect.Message {
-	mi := &file_module_msg_proto_msgTypes[106]
+	mi := &file_module_msg_proto_msgTypes[111]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6310,7 +6566,7 @@ type NATArg_PortRange struct {
 func (x *NATArg_PortRange) Reset() {
 	*x = NATArg_PortRange{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_module_msg_proto_msgTypes[110]
+		mi := &file_module_msg_proto_msgTypes[115]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6323,7 +6579,7 @@ func (x *NATArg_PortRange) String() string {
 func (*NATArg_PortRange) ProtoMessage() {}
 
 func (x *NATArg_PortRange) ProtoReflect() protoreflect.Message {
-	mi := &file_module_msg_proto_msgTypes[110]
+	mi := &file_module_msg_proto_msgTypes[115]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6372,7 +6628,7 @@ type NATArg_ExternalAddress struct {
 func (x *NATArg_ExternalAddress) Reset() {
 	*x = NATArg_ExternalAddress{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_module_msg_proto_msgTypes[111]
+		mi := &file_module_msg_proto_msgTypes[116]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6385,7 +6641,7 @@ func (x *NATArg_ExternalAddress) String() string {
 func (*NATArg_ExternalAddress) ProtoMessage() {}
 
 func (x *NATArg_ExternalAddress) ProtoReflect() protoreflect.Message {
-	mi := &file_module_msg_proto_msgTypes[111]
+	mi := &file_module_msg_proto_msgTypes[116]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6427,7 +6683,7 @@ type StaticNATArg_AddressRange struct {
 func (x *StaticNATArg_AddressRange) Reset() {
 	*x = StaticNATArg_AddressRange{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_module_msg_proto_msgTypes[112]
+		mi := &file_module_msg_proto_msgTypes[117]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6440,7 +6696,7 @@ func (x *StaticNATArg_AddressRange) String() string {
 func (*StaticNATArg_AddressRange) ProtoMessage() {}
 
 func (x *StaticNATArg_AddressRange) ProtoReflect() protoreflect.Message {
-	mi := &file_module_msg_proto_msgTypes[112]
+	mi := &file_module_msg_proto_msgTypes[117]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6482,7 +6738,7 @@ type StaticNATArg_AddressRangePair struct {
 func (x *StaticNATArg_AddressRangePair) Reset() {
 	*x = StaticNATArg_AddressRangePair{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_module_msg_proto_msgTypes[113]
+		mi := &file_module_msg_proto_msgTypes[118]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6495,7 +6751,7 @@ func (x *StaticNATArg_AddressRangePair) String() string {
 func (*StaticNATArg_AddressRangePair) ProtoMessage() {}
 
 func (x *StaticNATArg_AddressRangePair) ProtoReflect() protoreflect.Message {
-	mi := &file_module_msg_proto_msgTypes[113]
+	mi := &file_module_msg_proto_msgTypes[118]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6542,7 +6798,7 @@ type RandomUpdateArg_Field struct {
 func (x *RandomUpdateArg_Field) Reset() {
 	*x = RandomUpdateArg_Field{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_module_msg_proto_msgTypes[114]
+		mi := &file_module_msg_proto_msgTypes[119]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6555,7 +6811,7 @@ func (x *RandomUpdateArg_Field) String() string {
 func (*RandomUpdateArg_Field) ProtoMessage() {}
 
 func (x *RandomUpdateArg_Field) ProtoReflect() protoreflect.Message {
-	mi := &file_module_msg_proto_msgTypes[114]
+	mi := &file_module_msg_proto_msgTypes[119]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6623,7 +6879,7 @@ type SetMetadataArg_Attribute struct {
 func (x *SetMetadataArg_Attribute) Reset() {
 	*x = SetMetadataArg_Attribute{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_module_msg_proto_msgTypes[115]
+		mi := &file_module_msg_proto_msgTypes[120]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6636,7 +6892,7 @@ func (x *SetMetadataArg_Attribute) String() string {
 func (*SetMetadataArg_Attribute) ProtoMessage() {}
 
 func (x *SetMetadataArg_Attribute) ProtoReflect() protoreflect.Message {
-	mi := &file_module_msg_proto_msgTypes[115]
+	mi := &file_module_msg_proto_msgTypes[120]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6739,7 +6995,7 @@ type UpdateArg_Field struct {
 func (x *UpdateArg_Field) Reset() {
 	*x = UpdateArg_Field{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_module_msg_proto_msgTypes[116]
+		mi := &file_module_msg_proto_msgTypes[121]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6752,7 +7008,7 @@ func (x *UpdateArg_Field) String() string {
 func (*UpdateArg_Field) ProtoMessage() {}
 
 func (x *UpdateArg_Field) ProtoReflect() protoreflect.Message {
-	mi := &file_module_msg_proto_msgTypes[116]
+	mi := &file_module_msg_proto_msgTypes[121]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6803,7 +7059,7 @@ type UrlFilterArg_Url struct {
 func (x *UrlFilterArg_Url) Reset() {
 	*x = UrlFilterArg_Url{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_module_msg_proto_msgTypes[117]
+		mi := &file_module_msg_proto_msgTypes[122]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6816,7 +7072,7 @@ func (x *UrlFilterArg_Url) String() string {
 func (*UrlFilterArg_Url) ProtoMessage() {}
 
 func (x *UrlFilterArg_Url) ProtoReflect() protoreflect.Message {
-	mi := &file_module_msg_proto_msgTypes[117]
+	mi := &file_module_msg_proto_msgTypes[122]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7408,7 +7664,30 @@ var file_module_msg_proto_rawDesc = []byte{
 	0x65, 0x72, 0x47, 0x61, 0x74, 0x65, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03,
 	0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14,
 	0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x76,
-	0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01, 0x22, 0x58, 0x0a, 0x06, 0x51, 0x6f, 0x73, 0x41,
+	0x72, 0x67, 0x12, 0x26, 0x0a, 0x06, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03,
+	0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x62, 0x65, 0x73, 0x73, 0x2e, 0x70, 0x62, 0x2e, 0x46, 0x69, 0x65,
+	0x6c, 0x64, 0x52, 0x06, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x73, 0x12, 0x26, 0x0a, 0x06, 0x76, 0x61,
+	0x6c, 0x75, 0x65, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x62, 0x65, 0x73,
+	0x73, 0x2e, 0x70, 0x62, 0x2e, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x52, 0x06, 0x76, 0x61, 0x6c, 0x75,
+	0x65, 0x73, 0x22, 0x7e, 0x0a, 0x10, 0x51, 0x6f, 0x73, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64,
+	0x41, 0x64, 0x64, 0x41, 0x72, 0x67, 0x12, 0x12, 0x0a, 0x04, 0x67, 0x61, 0x74, 0x65, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x04, 0x52, 0x04, 0x67, 0x61, 0x74, 0x65, 0x12, 0x2a, 0x0a, 0x06, 0x66, 0x69,
+	0x65, 0x6c, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x62, 0x65, 0x73,
+	0x73, 0x2e, 0x70, 0x62, 0x2e, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x44, 0x61, 0x74, 0x61, 0x52, 0x06,
+	0x66, 0x69, 0x65, 0x6c, 0x64, 0x73, 0x12, 0x2a, 0x0a, 0x06, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x73,
+	0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x62, 0x65, 0x73, 0x73, 0x2e, 0x70, 0x62,
+	0x2e, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x44, 0x61, 0x74, 0x61, 0x52, 0x06, 0x76, 0x61, 0x6c, 0x75,
+	0x65, 0x73, 0x22, 0x41, 0x0a, 0x13, 0x51, 0x6f, 0x73, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x72, 0x67, 0x12, 0x2a, 0x0a, 0x06, 0x66, 0x69, 0x65,
+	0x6c, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x62, 0x65, 0x73, 0x73,
+	0x2e, 0x70, 0x62, 0x2e, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x44, 0x61, 0x74, 0x61, 0x52, 0x06, 0x66,
+	0x69, 0x65, 0x6c, 0x64, 0x73, 0x22, 0x14, 0x0a, 0x12, 0x51, 0x6f, 0x73, 0x43, 0x6f, 0x6d, 0x6d,
+	0x61, 0x6e, 0x64, 0x43, 0x6c, 0x65, 0x61, 0x72, 0x41, 0x72, 0x67, 0x22, 0x31, 0x0a, 0x1b, 0x51,
+	0x6f, 0x73, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x53, 0x65, 0x74, 0x44, 0x65, 0x66, 0x61,
+	0x75, 0x6c, 0x74, 0x47, 0x61, 0x74, 0x65, 0x41, 0x72, 0x67, 0x12, 0x12, 0x0a, 0x04, 0x67, 0x61,
+	0x74, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x04, 0x67, 0x61, 0x74, 0x65, 0x62, 0x06,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -7423,7 +7702,7 @@ func file_module_msg_proto_rawDescGZIP() []byte {
 	return file_module_msg_proto_rawDescData
 }
 
-var file_module_msg_proto_msgTypes = make([]protoimpl.MessageInfo, 119)
+var file_module_msg_proto_msgTypes = make([]protoimpl.MessageInfo, 124)
 var file_module_msg_proto_goTypes = []interface{}{
 	(*EmptyArg)(nil),                                   // 0: bess.pb.EmptyArg
 	(*BPFCommandClearArg)(nil),                         // 1: bess.pb.BPFCommandClearArg
@@ -7527,71 +7806,81 @@ var file_module_msg_proto_goTypes = []interface{}{
 	(*ArpResponderArg)(nil),                            // 99: bess.pb.ArpResponderArg
 	(*MplsPopArg)(nil),                                 // 100: bess.pb.MplsPopArg
 	(*WorkerSplitArg)(nil),                             // 101: bess.pb.WorkerSplitArg
-	(*L2ForwardCommandAddArg_Entry)(nil),               // 102: bess.pb.L2ForwardCommandAddArg.Entry
-	(*MeasureCommandGetSummaryResponse_Histogram)(nil), // 103: bess.pb.MeasureCommandGetSummaryResponse.Histogram
-	(*ACLArg_Rule)(nil),                                // 104: bess.pb.ACLArg.Rule
-	(*BPFArg_Filter)(nil),                              // 105: bess.pb.BPFArg.Filter
-	(*GenericEncapArg_EncapField)(nil),                 // 106: bess.pb.GenericEncapArg.EncapField
-	nil,                                                // 107: bess.pb.MetadataTestArg.ReadEntry
-	nil,                                                // 108: bess.pb.MetadataTestArg.WriteEntry
-	nil,                                                // 109: bess.pb.MetadataTestArg.UpdateEntry
-	(*NATArg_PortRange)(nil),                           // 110: bess.pb.NATArg.PortRange
-	(*NATArg_ExternalAddress)(nil),                     // 111: bess.pb.NATArg.ExternalAddress
-	(*StaticNATArg_AddressRange)(nil),                  // 112: bess.pb.StaticNATArg.AddressRange
-	(*StaticNATArg_AddressRangePair)(nil),              // 113: bess.pb.StaticNATArg.AddressRangePair
-	(*RandomUpdateArg_Field)(nil),                      // 114: bess.pb.RandomUpdateArg.Field
-	(*SetMetadataArg_Attribute)(nil),                   // 115: bess.pb.SetMetadataArg.Attribute
-	(*UpdateArg_Field)(nil),                            // 116: bess.pb.UpdateArg.Field
-	(*UrlFilterArg_Url)(nil),                           // 117: bess.pb.UrlFilterArg.Url
-	nil,                                                // 118: bess.pb.WorkerSplitArg.WorkerGatesEntry
-	(*FieldData)(nil),                                  // 119: bess.pb.FieldData
-	(*Field)(nil),                                      // 120: bess.pb.Field
+	(*QosArg)(nil),                                     // 102: bess.pb.QosArg
+	(*QosCommandAddArg)(nil),                           // 103: bess.pb.QosCommandAddArg
+	(*QosCommandDeleteArg)(nil),                        // 104: bess.pb.QosCommandDeleteArg
+	(*QosCommandClearArg)(nil),                         // 105: bess.pb.QosCommandClearArg
+	(*QosCommandSetDefaultGateArg)(nil),                // 106: bess.pb.QosCommandSetDefaultGateArg
+	(*L2ForwardCommandAddArg_Entry)(nil),               // 107: bess.pb.L2ForwardCommandAddArg.Entry
+	(*MeasureCommandGetSummaryResponse_Histogram)(nil), // 108: bess.pb.MeasureCommandGetSummaryResponse.Histogram
+	(*ACLArg_Rule)(nil),                                // 109: bess.pb.ACLArg.Rule
+	(*BPFArg_Filter)(nil),                              // 110: bess.pb.BPFArg.Filter
+	(*GenericEncapArg_EncapField)(nil),                 // 111: bess.pb.GenericEncapArg.EncapField
+	nil,                                                // 112: bess.pb.MetadataTestArg.ReadEntry
+	nil,                                                // 113: bess.pb.MetadataTestArg.WriteEntry
+	nil,                                                // 114: bess.pb.MetadataTestArg.UpdateEntry
+	(*NATArg_PortRange)(nil),                           // 115: bess.pb.NATArg.PortRange
+	(*NATArg_ExternalAddress)(nil),                     // 116: bess.pb.NATArg.ExternalAddress
+	(*StaticNATArg_AddressRange)(nil),                  // 117: bess.pb.StaticNATArg.AddressRange
+	(*StaticNATArg_AddressRangePair)(nil),              // 118: bess.pb.StaticNATArg.AddressRangePair
+	(*RandomUpdateArg_Field)(nil),                      // 119: bess.pb.RandomUpdateArg.Field
+	(*SetMetadataArg_Attribute)(nil),                   // 120: bess.pb.SetMetadataArg.Attribute
+	(*UpdateArg_Field)(nil),                            // 121: bess.pb.UpdateArg.Field
+	(*UrlFilterArg_Url)(nil),                           // 122: bess.pb.UrlFilterArg.Url
+	nil,                                                // 123: bess.pb.WorkerSplitArg.WorkerGatesEntry
+	(*FieldData)(nil),                                  // 124: bess.pb.FieldData
+	(*Field)(nil),                                      // 125: bess.pb.Field
 }
 var file_module_msg_proto_depIdxs = []int32{
-	119, // 0: bess.pb.ExactMatchCommandAddArg.fields:type_name -> bess.pb.FieldData
-	119, // 1: bess.pb.ExactMatchCommandAddArg.values:type_name -> bess.pb.FieldData
-	119, // 2: bess.pb.ExactMatchCommandDeleteArg.fields:type_name -> bess.pb.FieldData
-	120, // 3: bess.pb.HashLBCommandSetModeArg.fields:type_name -> bess.pb.Field
-	102, // 4: bess.pb.L2ForwardCommandAddArg.entries:type_name -> bess.pb.L2ForwardCommandAddArg.Entry
-	103, // 5: bess.pb.MeasureCommandGetSummaryResponse.latency:type_name -> bess.pb.MeasureCommandGetSummaryResponse.Histogram
-	103, // 6: bess.pb.MeasureCommandGetSummaryResponse.jitter:type_name -> bess.pb.MeasureCommandGetSummaryResponse.Histogram
-	119, // 7: bess.pb.WildcardMatchCommandAddArg.values:type_name -> bess.pb.FieldData
-	119, // 8: bess.pb.WildcardMatchCommandAddArg.masks:type_name -> bess.pb.FieldData
-	119, // 9: bess.pb.WildcardMatchCommandAddArg.valuesv:type_name -> bess.pb.FieldData
-	119, // 10: bess.pb.WildcardMatchCommandDeleteArg.values:type_name -> bess.pb.FieldData
-	119, // 11: bess.pb.WildcardMatchCommandDeleteArg.masks:type_name -> bess.pb.FieldData
-	104, // 12: bess.pb.ACLArg.rules:type_name -> bess.pb.ACLArg.Rule
-	105, // 13: bess.pb.BPFArg.filters:type_name -> bess.pb.BPFArg.Filter
-	120, // 14: bess.pb.ExactMatchArg.fields:type_name -> bess.pb.Field
-	119, // 15: bess.pb.ExactMatchArg.masks:type_name -> bess.pb.FieldData
-	120, // 16: bess.pb.ExactMatchArg.values:type_name -> bess.pb.Field
-	119, // 17: bess.pb.ExactMatchArg.masksv:type_name -> bess.pb.FieldData
+	124, // 0: bess.pb.ExactMatchCommandAddArg.fields:type_name -> bess.pb.FieldData
+	124, // 1: bess.pb.ExactMatchCommandAddArg.values:type_name -> bess.pb.FieldData
+	124, // 2: bess.pb.ExactMatchCommandDeleteArg.fields:type_name -> bess.pb.FieldData
+	125, // 3: bess.pb.HashLBCommandSetModeArg.fields:type_name -> bess.pb.Field
+	107, // 4: bess.pb.L2ForwardCommandAddArg.entries:type_name -> bess.pb.L2ForwardCommandAddArg.Entry
+	108, // 5: bess.pb.MeasureCommandGetSummaryResponse.latency:type_name -> bess.pb.MeasureCommandGetSummaryResponse.Histogram
+	108, // 6: bess.pb.MeasureCommandGetSummaryResponse.jitter:type_name -> bess.pb.MeasureCommandGetSummaryResponse.Histogram
+	124, // 7: bess.pb.WildcardMatchCommandAddArg.values:type_name -> bess.pb.FieldData
+	124, // 8: bess.pb.WildcardMatchCommandAddArg.masks:type_name -> bess.pb.FieldData
+	124, // 9: bess.pb.WildcardMatchCommandAddArg.valuesv:type_name -> bess.pb.FieldData
+	124, // 10: bess.pb.WildcardMatchCommandDeleteArg.values:type_name -> bess.pb.FieldData
+	124, // 11: bess.pb.WildcardMatchCommandDeleteArg.masks:type_name -> bess.pb.FieldData
+	109, // 12: bess.pb.ACLArg.rules:type_name -> bess.pb.ACLArg.Rule
+	110, // 13: bess.pb.BPFArg.filters:type_name -> bess.pb.BPFArg.Filter
+	125, // 14: bess.pb.ExactMatchArg.fields:type_name -> bess.pb.Field
+	124, // 15: bess.pb.ExactMatchArg.masks:type_name -> bess.pb.FieldData
+	125, // 16: bess.pb.ExactMatchArg.values:type_name -> bess.pb.Field
+	124, // 17: bess.pb.ExactMatchArg.masksv:type_name -> bess.pb.FieldData
 	2,   // 18: bess.pb.ExactMatchConfig.rules:type_name -> bess.pb.ExactMatchCommandAddArg
-	106, // 19: bess.pb.GenericEncapArg.fields:type_name -> bess.pb.GenericEncapArg.EncapField
-	120, // 20: bess.pb.HashLBArg.fields:type_name -> bess.pb.Field
-	107, // 21: bess.pb.MetadataTestArg.read:type_name -> bess.pb.MetadataTestArg.ReadEntry
-	108, // 22: bess.pb.MetadataTestArg.write:type_name -> bess.pb.MetadataTestArg.WriteEntry
-	109, // 23: bess.pb.MetadataTestArg.update:type_name -> bess.pb.MetadataTestArg.UpdateEntry
-	111, // 24: bess.pb.NATArg.ext_addrs:type_name -> bess.pb.NATArg.ExternalAddress
-	113, // 25: bess.pb.StaticNATArg.pairs:type_name -> bess.pb.StaticNATArg.AddressRangePair
-	114, // 26: bess.pb.RandomUpdateArg.fields:type_name -> bess.pb.RandomUpdateArg.Field
-	115, // 27: bess.pb.SetMetadataArg.attrs:type_name -> bess.pb.SetMetadataArg.Attribute
-	116, // 28: bess.pb.UpdateArg.fields:type_name -> bess.pb.UpdateArg.Field
-	117, // 29: bess.pb.UrlFilterArg.blacklist:type_name -> bess.pb.UrlFilterArg.Url
-	117, // 30: bess.pb.UrlFilterConfig.blacklist:type_name -> bess.pb.UrlFilterArg.Url
-	120, // 31: bess.pb.WildcardMatchArg.fields:type_name -> bess.pb.Field
-	120, // 32: bess.pb.WildcardMatchArg.values:type_name -> bess.pb.Field
+	111, // 19: bess.pb.GenericEncapArg.fields:type_name -> bess.pb.GenericEncapArg.EncapField
+	125, // 20: bess.pb.HashLBArg.fields:type_name -> bess.pb.Field
+	112, // 21: bess.pb.MetadataTestArg.read:type_name -> bess.pb.MetadataTestArg.ReadEntry
+	113, // 22: bess.pb.MetadataTestArg.write:type_name -> bess.pb.MetadataTestArg.WriteEntry
+	114, // 23: bess.pb.MetadataTestArg.update:type_name -> bess.pb.MetadataTestArg.UpdateEntry
+	116, // 24: bess.pb.NATArg.ext_addrs:type_name -> bess.pb.NATArg.ExternalAddress
+	118, // 25: bess.pb.StaticNATArg.pairs:type_name -> bess.pb.StaticNATArg.AddressRangePair
+	119, // 26: bess.pb.RandomUpdateArg.fields:type_name -> bess.pb.RandomUpdateArg.Field
+	120, // 27: bess.pb.SetMetadataArg.attrs:type_name -> bess.pb.SetMetadataArg.Attribute
+	121, // 28: bess.pb.UpdateArg.fields:type_name -> bess.pb.UpdateArg.Field
+	122, // 29: bess.pb.UrlFilterArg.blacklist:type_name -> bess.pb.UrlFilterArg.Url
+	122, // 30: bess.pb.UrlFilterConfig.blacklist:type_name -> bess.pb.UrlFilterArg.Url
+	125, // 31: bess.pb.WildcardMatchArg.fields:type_name -> bess.pb.Field
+	125, // 32: bess.pb.WildcardMatchArg.values:type_name -> bess.pb.Field
 	32,  // 33: bess.pb.WildcardMatchConfig.rules:type_name -> bess.pb.WildcardMatchCommandAddArg
-	118, // 34: bess.pb.WorkerSplitArg.worker_gates:type_name -> bess.pb.WorkerSplitArg.WorkerGatesEntry
-	119, // 35: bess.pb.GenericEncapArg.EncapField.value:type_name -> bess.pb.FieldData
-	110, // 36: bess.pb.NATArg.ExternalAddress.port_ranges:type_name -> bess.pb.NATArg.PortRange
-	112, // 37: bess.pb.StaticNATArg.AddressRangePair.int_range:type_name -> bess.pb.StaticNATArg.AddressRange
-	112, // 38: bess.pb.StaticNATArg.AddressRangePair.ext_range:type_name -> bess.pb.StaticNATArg.AddressRange
-	39,  // [39:39] is the sub-list for method output_type
-	39,  // [39:39] is the sub-list for method input_type
-	39,  // [39:39] is the sub-list for extension type_name
-	39,  // [39:39] is the sub-list for extension extendee
-	0,   // [0:39] is the sub-list for field type_name
+	123, // 34: bess.pb.WorkerSplitArg.worker_gates:type_name -> bess.pb.WorkerSplitArg.WorkerGatesEntry
+	125, // 35: bess.pb.QosArg.fields:type_name -> bess.pb.Field
+	125, // 36: bess.pb.QosArg.values:type_name -> bess.pb.Field
+	124, // 37: bess.pb.QosCommandAddArg.fields:type_name -> bess.pb.FieldData
+	124, // 38: bess.pb.QosCommandAddArg.values:type_name -> bess.pb.FieldData
+	124, // 39: bess.pb.QosCommandDeleteArg.fields:type_name -> bess.pb.FieldData
+	124, // 40: bess.pb.GenericEncapArg.EncapField.value:type_name -> bess.pb.FieldData
+	115, // 41: bess.pb.NATArg.ExternalAddress.port_ranges:type_name -> bess.pb.NATArg.PortRange
+	117, // 42: bess.pb.StaticNATArg.AddressRangePair.int_range:type_name -> bess.pb.StaticNATArg.AddressRange
+	117, // 43: bess.pb.StaticNATArg.AddressRangePair.ext_range:type_name -> bess.pb.StaticNATArg.AddressRange
+	44,  // [44:44] is the sub-list for method output_type
+	44,  // [44:44] is the sub-list for method input_type
+	44,  // [44:44] is the sub-list for extension type_name
+	44,  // [44:44] is the sub-list for extension extendee
+	0,   // [0:44] is the sub-list for field type_name
 }
 
 func init() { file_module_msg_proto_init() }
@@ -8826,7 +9115,7 @@ func file_module_msg_proto_init() {
 			}
 		}
 		file_module_msg_proto_msgTypes[102].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*L2ForwardCommandAddArg_Entry); i {
+			switch v := v.(*QosArg); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8838,7 +9127,7 @@ func file_module_msg_proto_init() {
 			}
 		}
 		file_module_msg_proto_msgTypes[103].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MeasureCommandGetSummaryResponse_Histogram); i {
+			switch v := v.(*QosCommandAddArg); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8850,7 +9139,7 @@ func file_module_msg_proto_init() {
 			}
 		}
 		file_module_msg_proto_msgTypes[104].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ACLArg_Rule); i {
+			switch v := v.(*QosCommandDeleteArg); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8862,7 +9151,7 @@ func file_module_msg_proto_init() {
 			}
 		}
 		file_module_msg_proto_msgTypes[105].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BPFArg_Filter); i {
+			switch v := v.(*QosCommandClearArg); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8874,7 +9163,43 @@ func file_module_msg_proto_init() {
 			}
 		}
 		file_module_msg_proto_msgTypes[106].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GenericEncapArg_EncapField); i {
+			switch v := v.(*QosCommandSetDefaultGateArg); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_module_msg_proto_msgTypes[107].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*L2ForwardCommandAddArg_Entry); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_module_msg_proto_msgTypes[108].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MeasureCommandGetSummaryResponse_Histogram); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_module_msg_proto_msgTypes[109].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ACLArg_Rule); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8886,7 +9211,7 @@ func file_module_msg_proto_init() {
 			}
 		}
 		file_module_msg_proto_msgTypes[110].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NATArg_PortRange); i {
+			switch v := v.(*BPFArg_Filter); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8898,43 +9223,7 @@ func file_module_msg_proto_init() {
 			}
 		}
 		file_module_msg_proto_msgTypes[111].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NATArg_ExternalAddress); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_module_msg_proto_msgTypes[112].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StaticNATArg_AddressRange); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_module_msg_proto_msgTypes[113].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StaticNATArg_AddressRangePair); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_module_msg_proto_msgTypes[114].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RandomUpdateArg_Field); i {
+			switch v := v.(*GenericEncapArg_EncapField); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8946,7 +9235,7 @@ func file_module_msg_proto_init() {
 			}
 		}
 		file_module_msg_proto_msgTypes[115].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SetMetadataArg_Attribute); i {
+			switch v := v.(*NATArg_PortRange); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8958,7 +9247,7 @@ func file_module_msg_proto_init() {
 			}
 		}
 		file_module_msg_proto_msgTypes[116].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateArg_Field); i {
+			switch v := v.(*NATArg_ExternalAddress); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8970,6 +9259,66 @@ func file_module_msg_proto_init() {
 			}
 		}
 		file_module_msg_proto_msgTypes[117].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*StaticNATArg_AddressRange); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_module_msg_proto_msgTypes[118].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*StaticNATArg_AddressRangePair); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_module_msg_proto_msgTypes[119].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RandomUpdateArg_Field); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_module_msg_proto_msgTypes[120].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SetMetadataArg_Attribute); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_module_msg_proto_msgTypes[121].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateArg_Field); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_module_msg_proto_msgTypes[122].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UrlFilterArg_Url); i {
 			case 0:
 				return &v.state
@@ -8994,11 +9343,11 @@ func file_module_msg_proto_init() {
 		(*TimestampArg_Offset)(nil),
 		(*TimestampArg_AttrName)(nil),
 	}
-	file_module_msg_proto_msgTypes[106].OneofWrappers = []interface{}{
+	file_module_msg_proto_msgTypes[111].OneofWrappers = []interface{}{
 		(*GenericEncapArg_EncapField_Attribute)(nil),
 		(*GenericEncapArg_EncapField_Value)(nil),
 	}
-	file_module_msg_proto_msgTypes[115].OneofWrappers = []interface{}{
+	file_module_msg_proto_msgTypes[120].OneofWrappers = []interface{}{
 		(*SetMetadataArg_Attribute_ValueInt)(nil),
 		(*SetMetadataArg_Attribute_ValueBin)(nil),
 	}
@@ -9008,7 +9357,7 @@ func file_module_msg_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_module_msg_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   119,
+			NumMessages:   124,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

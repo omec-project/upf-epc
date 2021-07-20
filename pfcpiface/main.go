@@ -25,20 +25,30 @@ var (
 
 // Conf : Json conf struct
 type Conf struct {
-	Mode              string      `json:"mode"`
-	MaxSessions       uint32      `json:"max_sessions"`
-	AccessIface       IfaceType   `json:"access"`
-	CoreIface         IfaceType   `json:"core"`
-	CPIface           CPIfaceInfo `json:"cpiface"`
-	P4rtcIface        P4rtcInfo   `json:"p4rtciface"`
-	EnableP4rt        bool        `json:"enable_p4rt"`
-	SimInfo           SimModeInfo `json:"sim"`
-	ConnTimeout       uint32      `json:"conn_timeout"`
-	ReadTimeout       uint32      `json:"read_timeout"`
-	EnableNotifyBess  bool        `json:"enable_notify_bess"`
-	EnableEndMarker   bool        `json:"enable_end_marker"`
-	NotifySockAddr    string      `json:"notify_sockaddr"`
-	EndMarkerSockAddr string      `json:"endmarker_sockaddr"`
+	Mode              string         `json:"mode"`
+	MaxSessions       uint32         `json:"max_sessions"`
+	AccessIface       IfaceType      `json:"access"`
+	CoreIface         IfaceType      `json:"core"`
+	CPIface           CPIfaceInfo    `json:"cpiface"`
+	P4rtcIface        P4rtcInfo      `json:"p4rtciface"`
+	EnableP4rt        bool           `json:"enable_p4rt"`
+	SimInfo           SimModeInfo    `json:"sim"`
+	ConnTimeout       uint32         `json:"conn_timeout"`
+	ReadTimeout       uint32         `json:"read_timeout"`
+	EnableNotifyBess  bool           `json:"enable_notify_bess"`
+	EnableEndMarker   bool           `json:"enable_end_marker"`
+	NotifySockAddr    string         `json:"notify_sockaddr"`
+	EndMarkerSockAddr string         `json:"endmarker_sockaddr"`
+	QciQosConfig      []QciQosConfig `json:"qci_qos_config"`
+}
+
+// QciQosConfig : Qos configured attributes
+type QciQosConfig struct {
+	QCI                uint8  `json:"qci"`
+	CBS                uint32 `json:"cbs"`
+	PBS                uint32 `json:"pbs"`
+	EBS                uint32 `json:"ebs"`
+	SchedulingPriority uint32 `json:"priority"`
 }
 
 // SimModeInfo : Sim mode attributes

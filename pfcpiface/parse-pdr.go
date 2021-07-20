@@ -29,13 +29,15 @@ type pdr struct {
 	dstPortMask      uint16
 	protoMask        uint8
 
-	precedence  uint32
-	pdrID       uint32
-	fseID       uint64
-	fseidIP     uint32
-	ctrID       uint32
-	farID       uint32
-	qerID       uint32
+	precedence uint32
+	pdrID      uint32
+	fseID      uint64
+	fseidIP    uint32
+	ctrID      uint32
+	farID      uint32
+	qerID      uint32
+	qci        uint32
+	//schedulingPriority uint32 will be used when we add priority for p4 upf.
 	needDecap   uint8
 	allocIPFlag bool
 }
@@ -71,6 +73,7 @@ func (p *pdr) printPDR() {
 	log.Println("ctrID:", p.ctrID)
 	log.Println("farID:", p.farID)
 	log.Println("qerID:", p.qerID)
+	log.Println("qci:", p.qci)
 	log.Println("needDecap:", p.needDecap)
 	log.Println("allocIPFlag:", p.allocIPFlag)
 	log.Println("--------------------------------------------")
@@ -134,7 +137,14 @@ func (p *pdr) parsePDI(pdiIEs []*ie.IE, appPFDs map[string]appPFD, upf *upf) err
 				log.Println("TunnelIPv4Address:", tunnelIPv4Address)
 			}
 		case ie.QFI:
-			// Do nothing for the time being
+			qfi, err := pdiIE.QFI()
+			if err != nil {
+				log.Println("Failed to parse QFI IE")
+				p.qci = 0
+			}
+
+			log.Println("Pdr QFI IE : ", qfi)
+			p.qci = uint32(qfi)
 		}
 	}
 
